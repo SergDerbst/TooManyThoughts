@@ -1,0 +1,58 @@
+.container {
+	padding-right: $grid-padding;
+	padding-left: $grid-padding;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@media (min-width : 768px) {
+	.container {
+		width: 750px;
+	}
+}
+
+@media (min-width : 992px) {
+	.container {
+		width: 970px;
+	}
+}
+
+@media (min-width : 1200px) {
+	.container {
+		width: 1170px;
+	}
+}
+
+.container-fluid {
+	padding-right: $grid-padding;
+	padding-left: $grid-padding;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.row {
+	margin-right: -$grid-padding;
+	margin-left: -$grid-padding;
+}
+
+.row:before, .row:after {
+	content: "";
+	display: table;
+}
+
+.row:after {
+	clear: both;
+}
+
+[class*='col-'] {
+	float: left;
+	min-height: 1px;
+	padding-left: $grid-padding;
+	padding-right: $grid-padding;
+}
+
+@for $i from 1 to ($grid-columns + 1) {
+	.col-#{$i} {
+		width: percentage($i / $grid-columns);
+	}
+}
