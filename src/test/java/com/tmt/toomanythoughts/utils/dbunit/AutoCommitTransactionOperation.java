@@ -1,4 +1,4 @@
-package com.tmt.toomanythoughts.utils;
+package com.tmt.toomanythoughts.utils.dbunit;
 
 import java.sql.Connection;
 import java.sql.SQLException;

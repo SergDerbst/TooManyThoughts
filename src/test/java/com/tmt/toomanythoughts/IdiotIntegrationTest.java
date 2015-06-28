@@ -5,6 +5,7 @@ import static org.hamcrest.Matchers.is;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.IntegrationTest;
 import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -36,16 +37,16 @@ public class IdiotIntegrationTest {
 	int	port;
 
 	@Test
-	public void thatAllIdiotsAreAtTheirPlace() {
-
+	public void thatAllIdiotsAreInTheirPlace() {
+		MockitoAnnotations.initMocks(this);
 		when().get("/idiots/70")
 					.then()
 					.statusCode(HttpStatus.OK.value())
-					.body("profession", is("floor lamp"));
+					.body("profession", is("doorstop"));
 		when().get("/idiots/75")
 					.then()
 					.statusCode(HttpStatus.OK.value())
-					.body("profession", is("doorstop"));
+					.body("profession", is("floor lamp"));
 		when().get("/idiots/80")
 					.then()
 					.statusCode(HttpStatus.OK.value())
@@ -54,6 +55,5 @@ public class IdiotIntegrationTest {
 					.then()
 					.statusCode(HttpStatus.OK.value())
 					.body("profession", is("president"));
-
 	}
 }

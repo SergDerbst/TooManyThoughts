@@ -1,4 +1,4 @@
-package com.tmt.toomanythoughts.utils;
+package com.tmt.toomanythoughts.utils.dbunit;
 
 import com.github.springtestdbunit.annotation.DatabaseOperation;
 import com.github.springtestdbunit.operation.DefaultDatabaseOperationLookup;
